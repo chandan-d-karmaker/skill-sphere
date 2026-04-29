@@ -1,8 +1,13 @@
+'use client'
 import React from 'react';
 import NavLink from './Navlink';
 import Link from 'next/link';
+import { signOut, useSession } from '@/lib/auth-client';
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
+
+    const user = useSession();
 
     return (
         <div>
@@ -36,7 +41,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link href="/register" className="btn btn-primary">Register</Link>
+                   {
+                    user?.data ?  <Link href="/" onClick={()=> signOut()} className="btn btn-primary">Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
+                   }
                 </div>
             </div>
         </div>
