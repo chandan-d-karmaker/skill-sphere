@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 const TopInstructor = () => {
     return (
-        <div className='bg-base-200 p-10 rounded-xl'>
+        <div className='bg-base-200 p-10 rounded-xl md:w-4/5 md:mx-auto'>
             <h2 className='text-3xl font-bold text-center mb-10'>Top Instructors</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
 

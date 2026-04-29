@@ -2,7 +2,7 @@ import React from 'react';
 
 const LearningTips = () => {
     return (
-        <div className='bg-base-200 p-10 rounded-xl'>
+        <div className='bg-base-200 p-10 rounded-xl md:w-4/5 md:mx-auto'>
             <h2 className='text-3xl font-bold text-center mb-10'>Learning Tips</h2>
             <div className='flex flex-col md:flex-row justify-between gap-4'>
                 <div className='bg-white p-4 shadow-md space-y-5 border border-base-300 rounded-xl'>
