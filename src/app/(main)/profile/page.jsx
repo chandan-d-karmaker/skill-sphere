@@ -14,7 +14,7 @@ const ProfilePage = () => {
         return <p>Loading...</p>;
     }
     return (
-        <div>
+        <div className='flex flex-col items-center justify-center space-y-4'>
             <h2 className='text-4xl font-semibold text-center'>My Profile</h2>
             <Image
                 src={data?.user.image}

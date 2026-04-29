@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 const Navbar = () => {
 
     const user = useSession();
+    console.log(user)
 
     return (
         <div>
