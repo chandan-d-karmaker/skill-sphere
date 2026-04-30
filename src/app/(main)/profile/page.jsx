@@ -12,7 +12,9 @@ const ProfilePage = () => {
 
     // add a better loading state later
     if (isPending) {
-        return <p>Loading...</p>;
+        return <div className='flex justify-center items-center'>
+            <span className="loading loading-ring loading-xl"></span>
+        </div>;
     }
     return (
         <div>

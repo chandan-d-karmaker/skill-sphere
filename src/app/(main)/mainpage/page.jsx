@@ -10,9 +10,9 @@ const Mainpage = () => {
         <div className='space-y-20'>
            <Hero/>
            <TopCourse/>
+           <Courses/>
            <LearningTips/>
            <TopInstructor/>
-           <Courses/>
         </div>
     );
 };
