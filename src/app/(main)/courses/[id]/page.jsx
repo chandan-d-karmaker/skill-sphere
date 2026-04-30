@@ -5,10 +5,15 @@ import { IoIosTime } from 'react-icons/io';
 import {  MdStarRate } from 'react-icons/md';
 import { IoIosPlayCircle } from "react-icons/io";
 
-// export const metadata = {
-// title: {courseData.title},
-//   description: "Online Learning Platform",
-// };
+export const generateMetadata = async({params}) => {
+    const {id} = await params;
+    const courses = await getCourseDetails(id);
+
+    return {
+        title: courses.title,
+        description: courses.details,
+    };
+}
 
 const CourseDetailsPage = async ({ params }) => {
 
