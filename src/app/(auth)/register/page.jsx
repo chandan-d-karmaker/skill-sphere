@@ -1,14 +1,19 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 
 const RegisterPage = () => {
 
     const [error, setError] = useState('');
-    const router = useRouter();
+
+    const handleGoogleSignUp = async () => {
+        const data = await authClient.signUp.social({
+            provider: "google",
+        });
+    };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,7 +35,7 @@ const RegisterPage = () => {
             return;
         }
         // callbackURL not working, so I've to manually redirect
-        window.location.href='/'
+        window.location.href = '/'
 
     }
 
@@ -94,11 +99,11 @@ const RegisterPage = () => {
 
                 <div className="divider">OR</div>
 
-                <div
+                <div onClick={handleGoogleSignUp}
                     className="btn flex gap-2 items-center justify-center border p-2 rounded-sm text-blue-500"
                 >
                     {" "}
-                    <FaGoogle /> Login with google
+                    <FaGoogle /> continue with google
                 </div>
             </form>
 

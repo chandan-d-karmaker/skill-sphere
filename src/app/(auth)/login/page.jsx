@@ -3,11 +3,18 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { FaGoogle } from 'react-icons/fa';
 
 const LoginPage = () => {
 
     const [error, setError] = useState('');
     const router = useRouter();
+
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,7 +34,7 @@ const LoginPage = () => {
             return;
         }
         // callbackURL not working, so I've to manually redirect
-        window.location.href='/'
+        window.location.href = '/'
 
     }
     return (
@@ -67,13 +74,22 @@ const LoginPage = () => {
                         name='password'
                         required
                         placeholder="Password"
-                        
+
                     />
                 </label>
-                
+
 
                 <button className="btn btn-neutral my-4">Login</button>
                 <p>New here? <Link href="/register" className="text-blue-500">Register here</Link></p>
+
+                <div className="divider">OR</div>
+
+                <div onClick={handleGoogleSignIn}
+                    className="btn flex gap-2 items-center justify-center border p-2 rounded-sm text-blue-500"
+                >
+                    {" "}
+                    <FaGoogle /> continue with google
+                </div>
             </form>
         </div>
     );
