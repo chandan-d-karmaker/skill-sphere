@@ -4,11 +4,12 @@ import NavLink from './Navlink';
 import Link from 'next/link';
 import { signOut, useSession } from '@/lib/auth-client';
 import { FaUser } from "react-icons/fa";
+import Image from 'next/image';
 
 const Navbar = () => {
 
-    const user = useSession();
-    console.log(user)
+    const {data} = useSession();
+    console.log(data);
 
     return (
         <div>
@@ -41,10 +42,18 @@ const Navbar = () => {
                         <li><NavLink href="/profile">My Profile</NavLink></li>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                   {
-                    user?.data ?  <Link href="/" onClick={()=> signOut()} className="btn btn-primary">Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
-                   }
+                <div className="navbar-end gap-4">
+                    {
+                        data && <div className='flex gap-2 items-center justify-center'>
+                        <p className='text-xl'>Welcome, <span className='font-medium'>{data?.user?.name}</span> </p>
+                        <div className='w-12 h-12 rounded-full'>
+                            <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full'/>
+                        </div>
+                    </div>
+                    }
+                    {
+                        data ? <Link href="/" onClick={() => signOut()} className="btn btn-primary">Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
+                    }
                 </div>
             </div>
         </div>
