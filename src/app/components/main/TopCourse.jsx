@@ -1,9 +1,11 @@
 import React from 'react';
-import coursesData from '@/app/data/courses.json';
 import CourseCard from '../shared/CourseCard';
+import { getCourses } from '@/lib/data';
 
-const TopCourse = () => {
+const TopCourse = async () => {
 
+    const coursesData = await getCourses();
+    // console.log(coursesData);
     const sortedCourses = [...coursesData].sort((a, b) => b.rating - a.rating);
     const topCourses = sortedCourses.slice(0, 3);
 

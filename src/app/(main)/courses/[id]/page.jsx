@@ -1,10 +1,13 @@
 import React from 'react';
 
-const CourseDetailsPage = ({params}) => {
+const CourseDetailsPage = async ({ params }) => {
+
+    const { id } = await params;
+    console.log(id);
     return (
         <div>
             <h3>Courses details page</h3>
-            <p>Course ID: {params.id}</p>
+            <p>Course ID: {id}</p>
         </div>
     );
 };

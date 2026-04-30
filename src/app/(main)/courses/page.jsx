@@ -1,8 +1,10 @@
 import React from 'react';
-import coursesData from '@/app/data/courses.json';
 import CourseCard from '@/app/components/shared/CourseCard';
+import { getCourses } from '@/lib/data';
 
-const AllCourses = () => {
+const AllCourses = async () => {
+
+    const coursesData = await getCourses();
     return (
         <div className='md:w-4/5 md:mx-auto mx-4'>
             <h2 className='text-4xl font-semibold text-center mb-10'>All courses here</h2>

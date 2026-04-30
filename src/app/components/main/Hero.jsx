@@ -12,7 +12,7 @@ const Hero = () => {
                 src={bgImage}
                 alt="Background"
 
-                quality={100}
+                quality={70}
                 fill
                 style={{
                     objectFit: 'cover',

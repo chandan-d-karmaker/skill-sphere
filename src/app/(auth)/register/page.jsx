@@ -30,7 +30,7 @@ const RegisterPage = () => {
             return;
         }
         // callbackURL not working, so I've to manually redirect
-        router.push('/');
+        window.location.href='/'
 
     }
 
