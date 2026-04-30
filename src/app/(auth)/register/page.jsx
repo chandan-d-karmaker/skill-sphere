@@ -10,7 +10,7 @@ const RegisterPage = () => {
     const [error, setError] = useState('');
 
     const handleGoogleSignUp = async () => {
-        const data = await authClient.signUp.social({
+        const {data, error} = await authClient.signUp.social({
             provider: "google",
         });
         if (error) {
@@ -41,7 +41,7 @@ const RegisterPage = () => {
             console.error(error.message);
             return;
         } else {
-            toast.success("Redirecting to google!");
+            toast.success("Redirecting to login page");
         }
         // callbackURL not working, so I've to manually redirect
         window.location.href = '/login'
