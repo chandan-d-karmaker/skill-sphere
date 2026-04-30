@@ -7,7 +7,7 @@ const Courses = () => {
             <h2 className='text-2xl font-bold text-center'>Click below to browse all courses here</h2>
             <div className='flex items-center justify-center'>
 
-                <Link href={'/courses'} className='btn btn-primary mt-5 mx-auto'>Go to courses page</Link>
+                <Link href={'/courses'} className='btn btn-primary mt-5 mx-auto transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#222] hover:-translate-y-0.5 hover:-translate-x-0.5'>Go to courses page</Link>
             </div>
 
         </div>

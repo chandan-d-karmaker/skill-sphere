@@ -33,7 +33,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">SkillSphere</a>
+                    <Link href='/' className="btn btn-ghost text-xl font-bold">SkillSphere</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-4">
                     {
-                        data && <div className='flex gap-2 items-center justify-center'>
+                        data && <div className='gap-2 items-center justify-center hidden md:flex'>
                         <p className='text-xl'>Welcome, <span className='font-medium'>{data?.user?.name}</span> </p>
                         <div className='w-12 h-12 rounded-full'>
                             <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full'/>
