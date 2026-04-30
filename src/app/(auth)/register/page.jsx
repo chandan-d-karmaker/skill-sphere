@@ -9,8 +9,10 @@ const RegisterPage = () => {
 
     const [error, setError] = useState('');
 
-    const handleGoogleSignUp = async () => {
-        const {data, error} = await authClient.signUp.social({
+    // used signin to register
+    // must check before submit
+    const handleGoogleSignIn = async () => {
+        const {data, error} = await authClient.signIn.social({
             provider: "google",
         });
         if (error) {
@@ -114,7 +116,7 @@ const RegisterPage = () => {
 
                 <div className="divider">OR</div>
 
-                <div onClick={handleGoogleSignUp}
+                <div onClick={handleGoogleSignIn}
                     className="btn flex gap-2 items-center justify-center border p-2 rounded-sm text-blue-500"
                 >
                     {" "}
