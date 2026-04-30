@@ -1,6 +1,7 @@
 'use client'
 import { useSession } from '@/lib/auth-client';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const ProfilePage = () => {
@@ -16,7 +17,7 @@ const ProfilePage = () => {
     return (
         <div>
             {
-                data && <div className='flex flex-col items-center justify-center space-y-4'>
+                data ? <div className='flex flex-col items-center justify-center space-y-4'>
                     <h2 className='text-4xl font-semibold text-center'>My Profile</h2>
                     <Image
                         src={data?.user.image}
@@ -26,6 +27,8 @@ const ProfilePage = () => {
                     />
                     <p>Name: {data?.user.name}</p>
                     <p>Email: {data?.user.email}</p>
+                </div> : <div className='bg-base-200 p-10 text-center space-y-4'>
+                    <h2 className='text-2xl font-medium'>Please login first</h2>
                 </div>
             }
         </div>
