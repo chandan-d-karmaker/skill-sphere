@@ -5,7 +5,7 @@ import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from 'react-icon
 
 const Footer = () => {
     return (
-        <div className='py-30 relative'>
+        <div className='pt-20 relative'>
 
             <Image
                 src={bgImage}
@@ -69,10 +69,10 @@ const Footer = () => {
 
                 </div>
 
-                <div className='w-4/5 mx-auto mt-4 md:mt-0 pt-7 border-t border-gray-700 flex justify-between items-center text-sm text-gray-400'>
+                <div className='w-4/5 mx-auto mt-4 md:mt-0 pt-7 md:pb-4 pb-0 border-t border-gray-700 flex justify-between items-center text-sm text-gray-400'>
 
-                    <h1>© 2026 Skill-Sphere. All rights reserved.</h1>
-                    <div className='flex gap-5'>
+                    <h1 className='text-center'>© 2026 Skill-Sphere. All rights reserved.</h1>
+                    <div className='md:flex gap-5 hidden'>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
                         <a href="#">Cookies</a>

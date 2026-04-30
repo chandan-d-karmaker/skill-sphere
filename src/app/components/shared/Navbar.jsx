@@ -4,6 +4,7 @@ import NavLink from './Navlink';
 import Link from 'next/link';
 import { signOut, useSession } from '@/lib/auth-client';
 import { FaUser } from "react-icons/fa";
+import { IoIosLogOut } from "react-icons/io";
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
                     </div>
                     }
                     {
-                        data ? <Link href="/" onClick={() => signOut()} className="btn btn-primary">Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
+                        data ? <Link href="/" onClick={() => signOut()} className="btn btn-primary"><IoIosLogOut/>Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
                     }
                 </div>
             </div>
