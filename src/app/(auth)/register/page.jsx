@@ -44,7 +44,7 @@ const RegisterPage = () => {
             toast.success("Redirecting to google!");
         }
         // callbackURL not working, so I've to manually redirect
-        window.location.href = '/'
+        window.location.href = '/login'
 
     }
 
@@ -75,7 +75,7 @@ const RegisterPage = () => {
                 <label className="label">Email</label>
                 <input name='email' type="email" className="input" placeholder="Email" />
 
-                <label className="label">Photo</label>
+                <label className="label">Photo URL</label>
                 <input name='image' type="text" className="input" placeholder="Photo URL" />
 
                 <label className="label">Password</label>

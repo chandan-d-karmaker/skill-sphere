@@ -20,7 +20,7 @@ const ProfilePage = () => {
         <div>
             {
                 data ? <div className='flex flex-col items-center justify-center space-y-4 text-center bg-linear-to-r from-red-50 via-blue-50 to-red-100 md:w-1/2 md:mx-auto p-8 rounded-2xl'>
-                    
+
                     <Image
                         src={data?.user.image}
                         alt={data?.user.name}
@@ -32,7 +32,10 @@ const ProfilePage = () => {
                     <p className='font-medium'>Email: {data?.user.email}</p>
 
                     <div>
-                        <button className='btn btn-primary btn-outline'>Edit profile</button>
+
+                        <Link href='/update-profile'>
+                            <button className='btn btn-primary btn-outline'>Edit profile</button>
+                        </Link>
                     </div>
                 </div> : <div className='bg-base-200 p-10 text-center space-y-4'>
                     <h2 className='text-2xl font-medium'>Please login first</h2>
