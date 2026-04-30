@@ -2,7 +2,8 @@ import { getCourseDetails } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react';
 import { IoIosTime } from 'react-icons/io';
-import { MdPlaylistAddCheckCircle, MdStarRate } from 'react-icons/md';
+import {  MdStarRate } from 'react-icons/md';
+import { IoIosPlayCircle } from "react-icons/io";
 
 const CourseDetailsPage = async ({ params }) => {
 
@@ -27,9 +28,9 @@ const CourseDetailsPage = async ({ params }) => {
                 </figure>
                 <div className="flex flex-col gap-3 m-4">
 
-                    <p className="text-[#6D6C80] font-semibold">{courseData.full_details}</p>
+                    <p className="font-semibold">{courseData.full_details}</p>
                     
-                    <div className="flex gap-1 items-center text-[#B2BBCC] font-semibold">
+                    <div className="flex gap-1 items-center text-[#747679] font-semibold">
                         <IoIosTime />
                         <span>{courseData.duration}</span>
                     </div>
@@ -40,7 +41,7 @@ const CourseDetailsPage = async ({ params }) => {
                     </div>
                     
                     <div className="">
-                        <p className="text-[#6D6C80] font-semibold">
+                        <p className="text-[#090909] font-semibold">
                             <span className="text-[#161439]">Instructor:</span> {courseData.instructor}
                         </p>
                     </div>
@@ -54,13 +55,13 @@ const CourseDetailsPage = async ({ params }) => {
                             {courseData.rating}
                         </p>
                     </div>
-                    <div className="divider"></div>
+                    <div className="divider my-1"></div>
                     
                     <div className="mb-4">
                         <p className="font-bold text-[#161439] mb-2">Course Curriculum</p>
                         <ul>
                             {
-                                courseData.curriculum.map((li, idx) => <li key={idx} className="text-[#6D6C80] font-medium flex gap-1 items-center"><MdPlaylistAddCheckCircle /> {li}</li>)
+                                courseData.curriculum.map((li, idx) => <li key={idx} className="text-[#6D6C80] font-medium flex gap-1 items-center"><IoIosPlayCircle /> {li}</li>)
                             }
                         </ul>
                     </div>

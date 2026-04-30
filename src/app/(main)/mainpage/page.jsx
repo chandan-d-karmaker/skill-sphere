@@ -4,6 +4,7 @@ import TopCourse from '@/app/components/main/TopCourse';
 import TopInstructor from '@/app/components/main/TopInstructor';
 import React from 'react';
 import Courses from '@/app/components/main/AllCourses';
+import LatestCourse from '@/app/components/main/LatestCourse';
 
 const Mainpage = () => {
     return (
@@ -13,6 +14,7 @@ const Mainpage = () => {
            <Courses/>
            <LearningTips/>
            <TopInstructor/>
+           <LatestCourse/>
         </div>
     );
 };
