@@ -24,10 +24,17 @@ A modern online learning platform where users can explore courses, watch lessons
 
 ## Tech Stack
 
-- **Frontend:** [Next JS](https://react.dev/)
+- **Frontend:** Next JS
 - **Styling:** Tailwind CSS + DaisyUI
 - **Authentication/Backend Services:** BetterAuth + mongoDB
 - **Deployment:** Vercel
+
+## NPM Used
+
+- **React Toastify**
+- **React Icon**
+- **Animate CSS**
+- **DaisyUI**
 
 ## Getting Started
 
@@ -44,7 +51,7 @@ Follow these steps to run the project locally on your machine.
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/chandan-d-karmaker/skill-sphere.git](https://github.com/chandan-d-karmaker/skill-sphere.git)
+    git clone https://github.com/chandan-d-karmaker/skill-sphere.git
     cd skill-sphere
     ```
 
@@ -55,7 +62,7 @@ Follow these steps to run the project locally on your machine.
     ```
 
 3.  **Environment Variables:**
-    Create a `.env.local` file in the root directory and add your Firebase configuration details:
+    Create a `.env` file in the root directory and add your Firebase configuration details:
 
 ```env
     add environment variables
@@ -69,9 +76,6 @@ Follow these steps to run the project locally on your machine.
 
 The application will be running at `http://localhost:3000`.
 
-## Deployment
-
-This project is configured for deployment on [Vercel](https://vercel.com). You can deploy by connecting your GitHub repository to the Vercel dashboard and ensuring the environment variables are configured in the Vercel project settings.
 
 ## Contributing
 
