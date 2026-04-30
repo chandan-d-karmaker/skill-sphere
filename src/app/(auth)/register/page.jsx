@@ -3,6 +3,7 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const RegisterPage = () => {
 
@@ -12,6 +13,12 @@ const RegisterPage = () => {
         const data = await authClient.signUp.social({
             provider: "google",
         });
+        if (error) {
+            setError(error.message);
+            return;
+        } else {
+            toast.success("Redirecting to google!");
+        }
     };
 
 
@@ -33,6 +40,8 @@ const RegisterPage = () => {
             setError(error.message);
             console.error(error.message);
             return;
+        } else {
+            toast.success("Redirecting to google!");
         }
         // callbackURL not working, so I've to manually redirect
         window.location.href = '/'
@@ -95,7 +104,7 @@ const RegisterPage = () => {
                 </p>
 
                 <button className="btn btn-neutral my-4">Register</button>
-                <p>Already registered? <Link href="/login" className="text-blue-500">Login here</Link></p>
+                <p className='text-center'>Already registered? <Link href="/login" className="text-blue-500">Login here</Link></p>
 
                 <div className="divider">OR</div>
 

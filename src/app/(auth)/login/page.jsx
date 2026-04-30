@@ -1,19 +1,25 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
 
     const [error, setError] = useState('');
-    const router = useRouter();
 
     const handleGoogleSignIn = async () => {
-        const data = await authClient.signIn.social({
+        const { data, error } = await authClient.signIn.social({
             provider: "google",
         });
+
+        if (error) {
+            setError(error.message);
+            return;
+        } else {
+            toast.success("Redirecting to google!");
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -32,6 +38,8 @@ const LoginPage = () => {
         if (error) {
             setError(error.message);
             return;
+        } else {
+            toast.success("Logged in successfully!")
         }
         // callbackURL not working, so I've to manually redirect
         window.location.href = '/'
@@ -80,7 +88,7 @@ const LoginPage = () => {
 
 
                 <button className="btn btn-neutral my-4">Login</button>
-                <p>New here? <Link href="/register" className="text-blue-500">Register here</Link></p>
+                <p className='text-center'>New here? <Link href="/register" className="text-blue-500">Register here</Link></p>
 
                 <div className="divider">OR</div>
 
