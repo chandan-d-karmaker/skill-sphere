@@ -5,6 +5,11 @@ import { IoIosTime } from 'react-icons/io';
 import {  MdStarRate } from 'react-icons/md';
 import { IoIosPlayCircle } from "react-icons/io";
 
+// export const metadata = {
+// title: {courseData.title},
+//   description: "Online Learning Platform",
+// };
+
 const CourseDetailsPage = async ({ params }) => {
 
     const { id } = await params;
@@ -59,9 +64,9 @@ const CourseDetailsPage = async ({ params }) => {
                     
                     <div className="mb-4">
                         <p className="font-bold text-[#161439] mb-2">Course Curriculum</p>
-                        <ul>
+                        <ul className='space-y-2'>
                             {
-                                courseData.curriculum.map((li, idx) => <li key={idx} className="text-[#6D6C80] font-medium flex gap-1 items-center"><IoIosPlayCircle /> {li}</li>)
+                                courseData.curriculum.map((li, idx) => <li key={idx} className="text-[#403f42] border border-base-300 bg-linear-to-r from-red-50 via-blue-50 to-red-100  p-2 rounded-2xl font-medium flex gap-1 items-center"><IoIosPlayCircle /> {li}</li>)
                             }
                         </ul>
                     </div>

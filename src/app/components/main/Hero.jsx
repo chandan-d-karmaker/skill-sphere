@@ -11,7 +11,7 @@ const Hero = () => {
             <Image
                 src={bgImage}
                 alt="Background"
-
+                loading='eager'
                 quality={70}
                 fill
                 style={{

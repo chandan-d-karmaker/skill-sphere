@@ -2,6 +2,10 @@ import React from 'react';
 import CourseCard from '@/app/components/shared/CourseCard';
 import { getCourses } from '@/lib/data';
 
+export const metadata = {
+  title: "All Courses",
+};
+
 const AllCourses = async () => {
 
     const coursesData = await getCourses();

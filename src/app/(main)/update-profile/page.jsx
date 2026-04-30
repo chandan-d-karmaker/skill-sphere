@@ -8,13 +8,13 @@ const UpdateProfile = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const userData = Object.fromEntries(formData.entries());
-        console.log(userData);
+        // console.log(userData);
 
 
         const { data, error } = await authClient.updateUser({
             ...userData
         })
-        console.log("Update user info: ", {data, error})
+        // console.log("Update user info: ", {data, error})
 
        window.location.href = '/profile'
 
