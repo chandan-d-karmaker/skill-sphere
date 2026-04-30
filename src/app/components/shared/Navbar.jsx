@@ -47,8 +47,8 @@ const Navbar = () => {
                     {
                         data && <div className='gap-2 items-center justify-center hidden md:flex'>
                         <p className='text-xl'>Welcome, <span className='font-medium'>{data?.user?.name}</span> </p>
-                        <div className='w-12 h-12 rounded-full'>
-                            <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full'/>
+                        <div>
+                            <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full w-10 h-10'/>
                         </div>
                     </div>
                     }
