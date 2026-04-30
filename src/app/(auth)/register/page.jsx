@@ -51,7 +51,7 @@ const RegisterPage = () => {
     return (
         <div className='flex flex-col justify-center items-center h-screen'>
 
-            <form onSubmit={handleSubmit} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <form onSubmit={handleSubmit} className="fieldset bg-linear-to-tl from-red-50 via-blue-50 to-red-100 border-base-300 rounded-box w-xs border p-4">
 
                 {
                     error && <div className="alert alert-error rounded-lg text-sm">
@@ -61,6 +61,12 @@ const RegisterPage = () => {
                         <span>{error}</span>
                     </div>
                 }
+
+                <div className='my-5 text-center'>
+                    <h2 className='text-xl font-medium mb-2'>Register Now</h2>
+                    <p className='text-[16px]'>and explore the full site</p>
+                </div>
+
 
 
                 <label className="label">Name</label>
@@ -104,7 +110,7 @@ const RegisterPage = () => {
                 </p>
 
                 <button className="btn btn-neutral my-4">Register</button>
-                <p className='text-center'>Already registered? <Link href="/login" className="text-blue-500">Login here</Link></p>
+                <p className='text-center text-[16px]'>Already registered? <Link href="/login" className="text-blue-500">Login here</Link></p>
 
                 <div className="divider">OR</div>
 

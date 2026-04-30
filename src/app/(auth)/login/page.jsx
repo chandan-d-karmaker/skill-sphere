@@ -47,7 +47,7 @@ const LoginPage = () => {
     }
     return (
         <div className='flex justify-center items-center h-screen'>
-            <form onSubmit={handleSubmit} className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <form onSubmit={handleSubmit} className="fieldset bg-linear-to-tl from-red-50 via-blue-50 to-red-100 border-base-300 rounded-box w-xs border p-4">
 
                 {
                     error && <div className="alert alert-error rounded-lg text-sm">
@@ -57,6 +57,11 @@ const LoginPage = () => {
                         <span>{error}</span>
                     </div>
                 }
+
+                <div className='my-5 text-center'>
+                    <h2 className='text-xl font-medium mb-2'>Welcome back</h2>
+                    <p className='text-[16px]'>login to get full access</p>
+                </div>
 
                 <label className="label">Email</label>
                 <input name="email" type="email" className="input" placeholder="Email" />
@@ -88,12 +93,12 @@ const LoginPage = () => {
 
 
                 <button className="btn btn-neutral my-4">Login</button>
-                <p className='text-center'>New here? <Link href="/register" className="text-blue-500">Register here</Link></p>
+                <p className='text-center text-[16px]'>New here? <Link href="/register" className="text-blue-500">Register here</Link></p>
 
                 <div className="divider">OR</div>
 
                 <div onClick={handleGoogleSignIn}
-                    className="btn flex gap-2 items-center justify-center border p-2 rounded-sm text-blue-500"
+                    className="btn flex gap-2 items-center justify-center border p-2 rounded-sm text-[16px] text-blue-500"
                 >
                     {" "}
                     <FaGoogle /> continue with google
