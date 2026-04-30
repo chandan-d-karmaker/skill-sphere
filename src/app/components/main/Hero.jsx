@@ -22,8 +22,8 @@ const Hero = () => {
             />
 
             <div className='relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 w-4/5 mx-auto py-20'>
-                <div className='flex flex-col gap-4'>
-                    <h2 className='text-5xl text-white font-bold animate__animated animate__backInDown'>Build Your Skills <br />
+                <div className='flex flex-col gap-4 animate__animated animate__backInLeft'>
+                    <h2 className='text-5xl text-white font-bold'>Build Your Skills <br />
                         With Online Course</h2>
                     <p className='text-[#afbac4] text-xl'>Learn new skills and advance your career with our expert-led online courses.</p>
                     <div>
@@ -31,7 +31,7 @@ const Hero = () => {
                     </div>
 
                 </div>
-                <div>
+                <div className='animate__animated animate__backInRight'>
                     <Image src={heroImg} alt='Hero Image' width={500} height={350} />
                 </div>
             </div>
