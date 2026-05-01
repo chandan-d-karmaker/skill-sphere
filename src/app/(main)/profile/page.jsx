@@ -37,8 +37,8 @@ const ProfilePage = () => {
                             <button className='btn btn-primary btn-outline'>Edit profile</button>
                         </Link>
                     </div>
-                </div> : <div className='bg-base-200 p-10 text-center space-y-4'>
-                    <h2 className='text-2xl font-medium'>Please login first</h2>
+                </div> : <div className=' flex items-center justify-center h-screen'>
+                    <h2 className='text-2xl rounded-2xl font-medium bg-base-200 p-10 text-center'>Please login first</h2>
                 </div>
             }
         </div>
