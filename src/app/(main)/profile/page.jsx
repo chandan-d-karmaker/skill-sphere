@@ -17,7 +17,7 @@ const ProfilePage = () => {
         </div>;
     }
     return (
-        <div>
+        <div className='animate__animated animate__backInDown'>
             {
                 data ? <div className='flex flex-col items-center justify-center space-y-4 text-center bg-linear-to-r from-red-50 via-blue-50 to-red-100 md:w-1/2 md:mx-auto p-8 rounded-2xl'>
 

@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
 
-    const {data} = useSession();
+    const { data, isPending } = useSession();
     console.log(data);
 
     return (
@@ -45,15 +45,22 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-4">
                     {
-                        data && <div className='gap-2 items-center justify-center hidden md:flex'>
-                        <p className='text-xl'>Welcome, <span className='font-medium'>{data?.user?.name}</span> </p>
-                        <div>
-                            <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full w-10 h-10'/>
+                        isPending &&
+                        <div className='flex justify-center items-center'>
+                            <span className="loading loading-ring loading-xl"></span>
                         </div>
-                    </div>
+
                     }
                     {
-                        data ? <Link href="/" onClick={() => signOut()} className="btn btn-primary"><IoIosLogOut/>Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
+                        data && <div className='gap-2 items-center justify-center hidden md:flex'>
+                            <p className='text-xl'>Welcome, <span className='font-medium'>{data?.user?.name}</span> </p>
+                            <div>
+                                <Image src={data?.user?.image} alt='user avatar' width={100} height={100} className='rounded-full w-10 h-10' />
+                            </div>
+                        </div>
+                    }
+                    {
+                        data ? <Link href="/" onClick={() => signOut()} className="btn btn-primary"><IoIosLogOut />Logout</Link> : <Link href="/login" className="btn btn-primary flex items-center justify-center"><FaUser /> Login</Link>
                     }
                 </div>
             </div>

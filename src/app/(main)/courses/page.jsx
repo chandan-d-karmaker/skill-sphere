@@ -20,8 +20,8 @@ const AllCourses = async ({ searchParams }) => {
 
     return (
         <div className='md:w-4/5 md:mx-auto mx-4'>
-            <div className='flex items-center justify-between mb-10'>
-                <h2 className='text-4xl font-semibold '>All courses here</h2>
+            <div className='flex-row md:flex-col items-center justify-between mb-10'>
+                <h2 className='text-4xl font-semibold mb-10 md:mb-0'>All courses here</h2>
                 <form className="flex gap-2">
                     <label className="input">
                         <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

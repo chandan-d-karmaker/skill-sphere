@@ -21,16 +21,16 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div className='flex items-center justify-center '>
+        <div className='flex items-center justify-center animate__animated animate__backInDown md:h-screen'>
 
-            <form onSubmit={handleUpdate} className="fieldset bg-linear-to-tl from-red-50 via-blue-50 to-red-100  border-base-300 rounded-box w-xs border p-4">
+            <form onSubmit={handleUpdate} className="fieldset bg-linear-to-tl from-red-50 via-blue-50 to-red-100  border-base-300 rounded-box w-xl border p-4">
                 <legend className="fieldset-legend">Update Information</legend>
 
                 <label className="label">Name</label>
-                <input name='name' type="text" className="input" placeholder="Name" />
+                <input name='name' type="text" className="input w-full" placeholder="Name" />
 
                 <label className="label">Photo URL</label>
-                <input name='image' type="text" className="input" placeholder="photo url" />
+                <input name='image' type="text" className="input w-full" placeholder="photo url" />
 
                 <button className="btn btn-neutral mt-4">Update info</button>
             </form>
